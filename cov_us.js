@@ -33,11 +33,15 @@ function build_d_counties(container){
             .attr("class", "county")
             .attr("d", path);
            
+           container.append("path")
+           .datum(topojson.mesh(us, us.objects.states, function(a, b) { return a !== b; }))
+           .attr("class", "border border--state")
+           .attr("d", path);
+           
+           
+           
            });
-        g.append("path")
-        .datum(topojson.mesh(us, us.objects.states, function(a, b) { return a !== b; }))
-        .attr("class", "border border--state")
-        .attr("d", path);
+        
     });
     return container;
 };
