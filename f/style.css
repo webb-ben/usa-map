@@ -54,6 +54,13 @@
 /*.state {*/
 /*  fill: inherit;*/
 /*}*/
+rect {
+    fill: #fff;
+    opacity: 1;
+    width: 200;
+    height; 75;
+    cursor: crosshair;
+}
 
 .border {
   fill: none;
