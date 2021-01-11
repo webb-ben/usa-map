@@ -1,12 +1,12 @@
 function build_i_states(container){
-    d3.json("./build/us.json", function(us) {
+    d3.json("build/us.json", function(us) {
     container.append("g").classed("states", true).selectAll("path").data(topojson.feature(us, us.objects.states).features).enter().append("path").classed("states", true).on("mouseover", onMouseOver).on("mouseout", onMouseOut).on("click", clicked).attr("d", path);
     });
     return container;
 };
             
 function build_i_counties(container){
-    d3.json("./build/us.json", function(us) {
+    d3.json("build/us.json", function(us) {
     container.append("g").classed("counties",true).selectAll("path").data(topojson.feature(us, us.objects.counties).features).enter().append("path").classed("county", true).on("mouseover", onMouseOver).on("mouseout", onMouseOut).on("click", clicked).attr("d", path);
     });
     return container;
@@ -45,14 +45,14 @@ function build_d_counties(container){
 };
 
 function build_states(container){
-    d3.json("./build/us.json", function(us) {
+    d3.json("build/us.json", function(us) {
     container.append("g").classed("states", true).selectAll("path").data(topojson.feature(us, us.objects.states).features).enter().append("path").attr("class", "state").attr("d", path);
     });
     return container;
 };
             
 function build_counties(container){
-    d3.json("./build/us.json", function(us) {
+    d3.json("build/us.json", function(us) {
     container.append("g").classed("counties", true).selectAll("path").data(topojson.feature(us, us.objects.counties).features).enter().append("path").attr("class", "county").attr("d", path);
     });
     return container;
